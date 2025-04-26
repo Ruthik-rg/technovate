@@ -1,0 +1,27 @@
+<!-- public/admin-gallery.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Club Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Upload to Gallery</h2>
+    <input type="file" id="mediaInput" accept="image/*,video/*" multiple />
+    <input type="text" id="caption" placeholder="Caption for media" />
+    <input type="text" id="clubTag" placeholder="Club Name (optional)" />
+    <button onclick="uploadSelected()">Upload Selected Files</button>
+  </div>
+
+  <div id="adminGalleryList" class="login-box">
+    <h3>Existing Gallery</h3>
+    <button onclick="deleteSelected()">Delete Selected</button>
+    <div id="galleryItems"></div>
+  </div>
+
+  <script type="module" src="js/admin-gallery.js"></script>
+</body>
+</html>
+
+  

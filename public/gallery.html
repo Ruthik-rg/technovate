@@ -1,0 +1,40 @@
+<!-- public/gallery.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Club Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Club Gallery</h2>
+    <div id="galleryList"></div>
+  </div>
+
+  <script type="module">
+    import { db } from './js/firebase.js';
+    import { getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+
+    async function loadGallery() {
+      const container = document.getElementById("galleryList");
+      container.innerHTML = "";
+
+      const snaps = await getDocs(collection(db, "gallery"));
+      snaps.forEach(doc => {
+        const d = doc.data();
+        container.innerHTML += `
+          <div class="gallery-card">
+            <strong>${d.uploadedBy}</strong> • <em>${d.club}</em>
+            <p>${d.caption}</p>
+            ${d.type === "video"
+              ? `<video controls width="100%"><source src="${d.url}" /></video>`
+              : `<img src="${d.url}" width="100%" style="border-radius:12px;" />`}
+          </div>
+        `;
+      });
+    }
+
+    window.onload = loadGallery;
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClubVibe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h2>Welcome to ClubVibe</h2></header>
+
+  <section id="carouselSection" class="carousel"></section>
+  <section id="clubList" class="club-list"></section>
+  <section id="myClubs" style="display: none;"><h3>My Clubs</h3><div id="joinedClubs"></div></section>
+  <section id="clubAnnouncements" style="padding: 1rem;">
+    <h3>Club Announcements</h3>
+    <div id="announcementList"></div>
+  </section>
+  
+  <nav class="bottom-nav">
+    <button onclick="switchTab('home')">Home</button>
+    <button onclick="switchTab('myClubs')">My Clubs</button>
+    <div class="bottom-nav">
+      <button onclick="switchTab('home')">Home</button>
+      <button onclick="switchTab('myClubs')">My Clubs</button>
+      <button onclick="window.location.href='feedback.html'">Feedback</button>
+      <button onclick="logoutUser()">Logout</button>
+    </div>
+    
+    <button onclick="logoutUser()">Logout</button>
+  </nav>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

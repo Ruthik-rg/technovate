@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin | ClubVibe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Admin Panel</h2>
+
+  <h3>Add New Club</h3>
+  <input type="text" id="clubName" placeholder="Club Name" />
+  <input type="text" id="clubDesc" placeholder="Description" />
+  <input type="text" id="clubCategory" placeholder="Category" />
+  <input type="text" id="clubImg" placeholder="Image URL" />
+  <button onclick="addClub()">Add Club</button>
+
+  <h3>Add Poster</h3>
+  <input type="text" id="posterUrl" placeholder="Poster Image URL" />
+  <button onclick="addPoster()">Add Poster</button>
+  <h3>Existing Clubs</h3>
+  <div id="clubTable"></div>
+  
+  <section id="feedbackSection">
+    <h3>User Feedbacks</h3>
+    <div id="feedbackList"></div>
+  </section>
+  
+
+  <h3>Post Announcement</h3>
+  <select id="announceClub"></select>
+  <textarea id="announcementText" placeholder="Your message..."></textarea>
+  <input type="datetime-local" id="announcementDate" />
+  <button onclick="postAnnouncement()">Post Announcement</button>
+  
+  <button onclick="logoutUser()" style="margin-top: 20px;">Logout</button>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
